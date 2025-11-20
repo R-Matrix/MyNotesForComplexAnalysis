@@ -1,4 +1,4 @@
-name: Deploy MkDocs to GitHub Pages
+name: Deploy MkDocs with Material
 
 on:
   push:
@@ -6,28 +6,41 @@ on:
   pull_request:
     branches: [ main, master ]
 
+permissions:
+  contents: write
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      
-      - name: Setup Python
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # 获取所有历史，用于版本信息
+
+      - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.x'
           
       - name: Install dependencies
         run: |
-          pip install mkdocs
-          pip install mkdocs-material
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
           
       - name: Build site
-        run: mkdocs build
-        
+        run: mkdocs build --strict
+        # --strict 参数会在构建时检查错误
+      
+      - name: Setup Git
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          
       - name: Deploy to GitHub Pages
-        if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./site
+          # 保留构建历史
+          force_orphan: false
