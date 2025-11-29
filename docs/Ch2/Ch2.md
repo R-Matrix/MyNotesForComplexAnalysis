@@ -45,60 +45,61 @@ The contour in Exercise 1
 
 ///
 
-!!! proof
-    取 $e^{-z^2}$ 为被积函数, 围道$C$如上图. 由柯西定理, 知
+/// proof
+取 $e^{-z^2}$ 为被积函数, 围道$C$如上图. 由柯西定理, 知
 
-    \[ \int_C e^{-z^2}dz = 0.    
-    \]
+\[ \int_C e^{-z^2}dz = 0.    
+\]
 
-    我们考虑圆弧
+我们考虑圆弧
 
-    \[\Gamma_R = \{z = Re^{i\theta} : 0 \le \theta \le \frac{\pi}{4}\}, \]
+\[\Gamma_R = \{z = Re^{i\theta} : 0 \le \theta \le \frac{\pi}{4}\}, \]
 
-    放缩有, 
+放缩有, 
 
-    \begin{align}
-    \left| \int_{\Gamma_R}e^{-z^2} dz \right| &= \left| \int_0^{\frac{\pi}{4}} e^{R^2(\cos 2\theta + \mathrm{i} \sin 2\theta)} \mathrm{i}Re^{\mathrm{i}\theta} d\theta \right|\\ 
-    &\le R\int_0^\frac{\pi}{4} e^{-R^2\cos 2\theta} d\theta.
-    \end{align}
+\begin{align}
+\left| \int_{\Gamma_R}e^{-z^2} dz \right| &= \left| \int_0^{\frac{\pi}{4}} e^{R^2(\cos 2\theta + \mathrm{i} \sin 2\theta)} \mathrm{i}Re^{\mathrm{i}\theta} d\theta \right|\\ 
+&\le R\int_0^\frac{\pi}{4} e^{-R^2\cos 2\theta} d\theta.
+\end{align}
 
-    下面我们来估计阶. 对于 $\forall \varepsilon, 0 < \varepsilon < 1$, $\exists \delta > 0$ 使得在 $[\frac{\pi}{4}-\delta, \frac{\pi}{4}]$ 上有
+下面我们来估计阶. 对于 $\forall \varepsilon, 0 < \varepsilon < 1$, $\exists \delta > 0$ 使得在 $[\frac{\pi}{4}-\delta, \frac{\pi}{4}]$ 上有
 
-    \[-2(\theta - \frac{\pi}{4}) \ge \cos 2\theta \ge -2(\theta - \frac \pi 4) \times \varepsilon, \]
+\[-2(\theta - \frac{\pi}{4}) \ge \cos 2\theta \ge -2(\theta - \frac \pi 4) \times \varepsilon, \]
 
-    这是由 $\cos 2\theta$ 在 $\frac{\pi}{4}$ 处的 Taylor 公式得来的. 于是有
+这是由 $\cos 2\theta$ 在 $\frac{\pi}{4}$ 处的 Taylor 公式得来的. 于是有
 
-    \[\int_{\frac \pi 4 - \delta} ^ \frac \pi 4 Re^{-R^2[-2(\theta - \frac \pi 4)]} d\theta \le
-    \int_{\frac \pi 4 - \delta} ^ \frac \pi 4 Re^{-R^2\cos 2\theta} d\theta \le
-    \int_{\frac \pi 4 - \delta} ^ \frac \pi 4 Re^{-R^2[-2(\theta - \frac \pi 4)\varepsilon]} d\theta,  \]
+\[\int_{\frac \pi 4 - \delta} ^ \frac \pi 4 Re^{-R^2[-2(\theta - \frac \pi 4)]} d\theta \le
+\int_{\frac \pi 4 - \delta} ^ \frac \pi 4 Re^{-R^2\cos 2\theta} d\theta \le
+\int_{\frac \pi 4 - \delta} ^ \frac \pi 4 Re^{-R^2[-2(\theta - \frac \pi 4)\varepsilon]} d\theta,  \]
 
-    计算得, 
+计算得, 
 
-    \[\frac{1-e^{-2\delta R^2}} {2R} \le \int_{\frac \pi 4 - \delta} ^ \frac \pi 4 Re^{-R^2\cos 2\theta} d\theta \le \frac{1-e^{-2\varepsilon\delta R^2}} {2\varepsilon R}, \]
+\[\frac{1-e^{-2\delta R^2}} {2R} \le \int_{\frac \pi 4 - \delta} ^ \frac \pi 4 Re^{-R^2\cos 2\theta} d\theta \le \frac{1-e^{-2\varepsilon\delta R^2}} {2\varepsilon R}, \]
 
-    全部乘以 $2R$ 再令 $R \to \infty$ 得
+全部乘以 $2R$ 再令 $R \to \infty$ 得
 
-    \[ 1 \le \lim_{R \to \infty} 2R \times R\int_{\frac \pi 4 - \delta} ^ \frac \pi 4 Re^{-R^2\cos 2\theta} d\theta \le \frac 1 \varepsilon. \]
+\[ 1 \le \lim_{R \to \infty} 2R \times R\int_{\frac \pi 4 - \delta} ^ \frac \pi 4 Re^{-R^2\cos 2\theta} d\theta \le \frac 1 \varepsilon. \]
 
-    由于 $0 < \varepsilon < 1$ 的任意性, 令 $\varepsilon \to 1$, 即得
+由于 $0 < \varepsilon < 1$ 的任意性, 令 $\varepsilon \to 1$, 即得
 
-    \[R\int_{\frac \pi 4 - \delta} ^ \frac \pi 4 Re^{-R^2\cos 2\theta} d\theta \sim \frac 1 {2R} \to 0, \: R \to \infty.\]
+\[R\int_{\frac \pi 4 - \delta} ^ \frac \pi 4 Re^{-R^2\cos 2\theta} d\theta \sim \frac 1 {2R} \to 0, \: R \to \infty.\]
 
-    显然又有
+显然又有
 
-    \[R\int_{\frac \pi 4 - \delta} ^ \frac \pi 4 Re^{-R^2\cos 2\theta} d\theta = O(Re^{-\varepsilon R^2}), \: \varepsilon > 0.\]
+\[R\int_{\frac \pi 4 - \delta} ^ \frac \pi 4 Re^{-R^2\cos 2\theta} d\theta = O(Re^{-\varepsilon R^2}), \: \varepsilon > 0.\]
 
-    于是
+于是
 
-    \[\lim_{R \to \infty} \int_{\Gamma_R}e^{-z^2}dz = 0.\]
+\[\lim_{R \to \infty} \int_{\Gamma_R}e^{-z^2}dz = 0.\]
 
-    回到最初的围道积分, 在 $\theta = \frac \pi 4$ 射线上带入 $z = xe^{i\frac{\pi}{4}}$ 有
+回到最初的围道积分, 在 $\theta = \frac \pi 4$ 射线上带入 $z = xe^{i\frac{\pi}{4}}$ 有
 
-    \[\int_0^\infty (\frac {\sqrt2} 2 \cos x^2 + \frac {\sqrt2} 2 \sin x^2) + i (\frac {\sqrt2} 2 \cos x^2 - \frac {\sqrt2} 2 \sin x^2) dx = \frac {\sqrt\pi} 2\]
+\[\int_0^\infty (\frac {\sqrt2} 2 \cos x^2 + \frac {\sqrt2} 2 \sin x^2) + i (\frac {\sqrt2} 2 \cos x^2 - \frac {\sqrt2} 2 \sin x^2) dx = \frac {\sqrt\pi} 2\]
 
-    比较实部和虚部即有 
+比较实部和虚部即有 
 
-    \[\int_0^\infty \sin(x^2)dx = \int_0^\infty \cos(x^2) dx = \frac{\sqrt {2\pi}}{4}.\]
+\[\int_0^\infty \sin(x^2)dx = \int_0^\infty \cos(x^2) dx = \frac{\sqrt {2\pi}}{4}.\]
+///
 
 <!-- /// details | "另一个我的证明"
     type : proof
@@ -187,7 +188,7 @@ by integrating $e^{-Ax}, A = \sqrt{a^2 + b^2}$, over an approxiate sector with a
 /// proof
 首先有
 
-\[int_0^\infty e^{-ax}\cos bx\: \mathrm{d}x + i \int_0^\infty e^{-ax}\sin bx\: \mathrm{d}x = \int_0^\infty e^{-(a-ib)x} \mathrm{d}x.\]
+\[\int_0^\infty e^{-ax}\cos bx\: \mathrm{d}x + i \int_0^\infty e^{-ax}\sin bx\: \mathrm{d}x = \int_0^\infty e^{-(a-ib)x} \mathrm{d}x.\]
 
 考虑函数 $e^{-Az}, A = \sqrt{a^2 + b^2}$, 取围道为: 以$[0, R]$ 和 $[0, Re^{i\theta}]$ 为边的扇形, 其中 $w = \arg (a-ib)$. 则在圆弧上有
 
@@ -239,3 +240,192 @@ $$e^{-\pi\xi^2} = \int_{-\infty}^{+\infty}e^{-\pi x ^ 2}e^{2\pi i x\xi} \:dx.$$
 &= e^{-\pi \xi^2}.
 \end{align}
 ///
+
+---
+### Exercise 5
+/// Question | Exercise 5  $\quad$ ( From Stein Ch2 ET7 )
+Suppose $f : \mathbb{D} \to \mathbb{C}$ is holomorphic. Show that the diameter $d = \sup_{z, w \in \mathbb{D}}|f(z) - f(w)|$ os the image of $f$ satisfies
+
+\[2|f'(0)|\le d.\]
+
+Moreover, it can be shown as that equality holds precisely when $f$ is linear, $f(z) = a_0 + a_1 z.$
+
+**Note**. In connection with this result, see the relationship between the diameter of a curve and Fourier series described in Problem 1, Chapter 4, Book 1.
+
+[Hint: $2f'(0) = \frac{1}{2\pi i}\int_{|\zeta| = r}\frac{f(\zeta) - f(-\zeta)}{\zeta^2}\: d\zeta$ whenever $0 < r < 1$.]
+///
+
+/// proof
+依据 Hint, 我们有
+
+\begin{align}
+2|f'(0)| &= \left| \frac{1}{2\pi i}\int_{|\zeta| = r}\frac{f(\zeta) - f(-\zeta)}{\zeta^2}\: d\zeta\right|\\
+&\le \frac{1}{2\pi}\int_{|\zeta| = r}\frac{|f(\zeta) - f(-\zeta)|}{|\zeta^2|}\: |d\zeta| \\
+&\le \frac{1}{2\pi}\int_{|\zeta| = r}\frac{d}{r^2}\: ds\\
+&= \frac d r
+\end{align}
+
+上式对任意 $0 < r < 1$ 都成立, 依 $r$ 的任意性, 令 $r \to 1^-$ 有 $2 |f'(0)| \le d.$
+///
+
+/// details | Remark
+    type : remark
+    open : False
+下文来自 Stein. *Fourier Analysis*. Chapter 4 PT1.
+
+> This problem explore another relationship between the geometry of a curve and Fourier series. The diameter od a curve $\Gamma$ parametrized by $\gamma(t) = (x(t), y(t))$ on $[-\pi, \pi]$ is defined by
+>
+> \[d = \sup_{P, Q \in \Gamma} |P - Q| = \sup_{t_1, t_2 \in [-\pi, \pi]}|\gamma(t_1) - \gamma_(t_2)|.\]
+>
+> if $a_n$ is the $n^{\text{th}}$ Fourier coefficient of $\gamma(t) = x(t) + iy(t)$ and $l$ denote the length of $\Gamma$, then
+>
+> 1. $2|a_n| \le d$ for all $n \ne 0$.
+> 2. $l \le \pi d$, whenever $\Gamma$ is convex.
+>
+> Property (1) follows from the fact that
+>
+> \[2a_n = \frac 1 {2\pi} \int_{-\pi} ^{\pi} [\gamma(t) - \gamma(t+\pi / n)]e^{-int}\: dt.\]
+>
+> The equality $l = \pi d$ is satisfied when $\Gamma$ is a circle, but surprisingly, this is not the only case. In fact, one finds that $l = \pi d$ is equivalent to $2|a_1| = d$. We re-parametrize $\gamma$ so that for each $t$ in $[-\pi, \pi]$ the tangent to the curve makes an angle $t$ with the $y$-axis. Then, if $a_1 = 1$ we have
+>
+> \[\gamma'(t) = ie^{it}(1+r(t)), \]
+>
+> where $r$ is a real-valued function which satisfies $r(t) + r(t + \pi) = 0.$ and $|r(t)| \le 1.$ Figure 7(a) shows the curve obtained by setting $r(t) = \cos (5t)$. Also, Figure 7(b) consists of the curve where $r(t) = h(3t)$, with $h(s) = -1$ if $-\pi \le s \le 0$ and $h(s) = 1$ if $0 < s < \pi$. This curve (which is only piecewise of class $C^1$) is known as the Reuleaux triangle and is the classical example of a curve of constant width which is not a circle.
+>
+> ![Figure 7](https://pic3.zhimg.com/v2-a34d85214b84251f200e0bd63e6126f2_r.jpg "Figure 7")
+> /// caption
+> Figure 7
+> ///
+
+第一问即为上面的题, 第二问详细见 [知乎链接](https://zhuanlan.zhihu.com/p/656110940 "Stein 《Fourier Analysis》 Chapter 4 习题解答(3) From 元亨利贞");
+
+*知乎作者为 元亨利贞*
+///
+
+---
+### Exercise 6
+/// Question | Exercise 6  $\quad$ ( From Stein Ch2 ET8 )
+If $f$ is a holomophic function on the strip $-1 < y < 1, x \in \mathbb{R}$ with
+
+\[|f(z)| \le A(1+|z|)^\eta, \quad \eta\: \text{ is a fixed real number}\]
+
+for all $z$ in that strip, show that for each integer $\eta \ge 0$ there exists $A_n \ge 0$ so that
+
+\[|f^{(n)}(x)| \le A_n (1 + |x|)^\eta, \quad \text{for all $\:x \in \mathbb{R}$}.\]
+
+[Hint: Use the Cauchy inequalities.]
+///
+
+/// proof
+利用 Cauchy不等式, 有
+
+\[|f^{(n)}(z)|\le \frac{n!\|f\|}{R^n} \le \frac{n!A(1+|z|)^\eta}{R^n}.\]
+
+取 $R = 1 /2$, 即上式为 $|f^{(n)}(z)|\le n!\,2^nA(1+|z|)^\eta$, 这对于任意 $|z-x| < 1 /2$ 都成立.
+
+那么令 $k = (\frac 3 2)^\eta$ , 对任意 $x \in \mathbb{R}$ 满足 
+
+$$
+\sup_{|z-x|=1/2}(1+|z|)^\eta \le (\frac 3 2 + |x|)^\eta \le  k \cdot (1+|x|)^\eta.$$
+
+令 $A_n = n!\, 2^n k A$ 即可.
+///
+
+---
+### Exercise 7
+/// Question | Exercise 7  $\quad$ ( From Stein Ch2 ET9 )
+Let $\Omega$ be a bounded open subset of $\mathbb{C}$, and $\varphi : \Omega \to \Omega$ a holomorphic function. Prove that if there exists a point $z_0 \in \Omega$ such that
+
+\[\varphi(z_0) = z_0\qquad \text{and} \qquad \varphi'(z_0) = 1\]
+
+then, $\varphi$ is linear.
+
+[Hint: Why can one assume that $z_0 = 0$? Write $\varphi(z) = z + a_nz^n + O(z^{n+1})$ near 0, and prove that if $\varphi_k = \varphi \circ \cdots \circ \varphi$(where $\varphi$ appears $k$ times), then $\varphi_k(z) = z + ka_nz^n + O(z^{n+1})$. Apply the Cauchy inequalities and let $k \to \infty$ to conclude the proof. Here we use the standard $O$ notation, where $f(z) = O(g(z))$ as $z \to 0$ means that $|f(z)| \le C|g(z)|$ for some contant $C$ as $|z| \to 0$.]
+///
+
+/// proof
+不妨设 $\varphi(0) = 0$, 否则考虑令 $f(z) = \varphi(z + x_0) - z_0$
+
+由于 $\varphi$ 全纯, 因此在 $0$ 处幂级数展开, 得到 $\varphi(z) = z + a_n z^n + O(z^{n+1})$.
+
+利用数学归纳法可知, 
+
+\[\varphi_{k}(z) = z + ka_n z^n + O(z^{n+1}).\]
+
+由于 $\varphi : \Omega \to \Omega$ 且 $\Omega$ 是有界区域, 因此 $|\varphi(z)| \le \operatorname{sup}_{w \in \partial \Omega}(0, w) := M$
+
+也即 $\forall z \in \Omega, |\varphi_k(z)| \le M$
+
+对 $\varphi_k(z)$ 利用 Cauchy 不等式, 得到
+
+\[|ka_n| \le \frac M {R^n}\]
+
+令 $k \to \infty$, 得 $a_n \to 0$, 也即 $\varphi(z) = z.$
+///
+
+/// Remark
+和上述题比较相像的几个定理.
+
+/// theorem | 定理 1  (Schwarz 引理)
+设 $f (z)$ 是从单位圆盘 $D(0, 1)$ 到自身的解析映射, 满足 $f(0) = 0$, 则
+
+1. $\forall z \in D(0, 1)$, $|f(z)| \le |z|$, 且 $|f'(0)| \le 1$;
+
+2. 存在 $z_0 \ne 0$ 使得 $|f(z_0)| = |z_0|$ 或 $|f'(0)| = 1$ 的充要条件是 $f(z) = e^{i\theta}z$, 其中 $\theta \in [0, 2\pi]$ 为常数.
+///
+
+/// theorem | 定理 2 (Bieberbach 猜想)
+如果 $f(z) = z + a_2z^2 + a_3z^3 + \cdots$ 在 $|z| < 1$ 上单叶, 则 $|a_n| \le n$. 等号成立对某个 $n$ 成立的充要条件是 $f(z)$ 是 Koebe 函数 $K(z) = \frac z {(1-z)^2}$ 的旋转 $k_\theta(z) = e^{-i\theta}K(e^{i\theta}z)$.
+///
+
+/// theorem | 定理 3 (Koebe 1/4 - 定理)
+设 $f$ 在 $\mathbb{D} = D(0, 1)$ 上单叶且 $f(0) = 0, f'(0) = 1$. 则 $f(\mathbb{D})\supset D(0, \frac 14)$. 并且有偏差估计
+
+
+1. \(\frac{1-|z|}{(1+|z|)^3} \le |f'(z)| \le \frac {1+|z|}{(1-|z|)^3} \);
+   
+2. $|\arg f'(z)| \le 2 \ln \frac{1+|z|}{1-|z|}$; 
+   
+3. $\frac{|z|}{(1+|z|)^2} \le |f(z)| \le \frac{|z|}{(1-|z|)^2}$.
+
+如果不存在 $w \in f(\mathbb{D})$ 使得 $|w| = \frac 14$, 则 $f(z) = k_\theta(z).$
+
+后面两个定理可以参考 
+[知乎链接1](https://zhuanlan.zhihu.com/p/25379347 "单叶函数猜想(1): Loewner的贡献 From 单叶函数猜想(1): Loewner的贡献"), 
+[知乎链接2](https://zhuanlan.zhihu.com/p/67912434 "复变函数学习笔记(14)——Koebe-Bieberbach定理、deBranges定理 From Fiddie")
+///
+///
+
+---
+### Exercise 8
+/// Question | Exercise 8  $\quad$ ( From Stein Ch2 ET10 )
+Weierstrass’s theorem states that a continuous function on $[0, 1]$ can be uni-
+formly approximated by polynomials. Can every continuous function on the closed
+unit disc be approximated uniformly by polynomials in the variable $z$?
+///
+/// proof
+不成立, 如取 $f(z) = Re(z).$
+///
+/// remark
+在正文中, 介绍到了 **Runge's approximation theorem**
+/// theorem | 定理 4 (龙格逼近定理)
+每一个在包含紧集 $K$ 的开集内全纯的函数可以被奇点在 $K^c$ 上的有理函数一致逼近，如果 $K^c$ 是连通集，上述函数可以在 $K$ 上被多项式一致逼近。
+///
+///
+
+---
+### Exercise 9
+/// Question | Exercise 9  $\quad$ ( From Stein Ch2 ET11 )
+Let $f$ be a holomorphic function on the dist $D_{R_0}$ centered at the origin and of radius $R_0$.
+
+(a) Prove that whenever $0 < R < R_0$ and $|z| < R$, then
+ 
+$$
+f(z) = \frac 1 {2\pi} \int_{0}^{2\pi} f(Re^{i\varphi})\mathrm{Re}\left(\frac {Re^{i\varphi}+z}{Re^{i\varphi}-z} \right) \: d\varphi.
+$$
+
+(b) Show that
+
+\[\mathrm{Re}\left(\frac {Re^{i\gamma}+r}{Re^{i\gamma}-r} \right) = \frac {R^2 - r^2}{R^2 - 2Rr\cos \gamma + r^2}\]
+
+[Hint: For the first part, note that if $w = R^2 / \bar z$, then the integral of $f(\zeta)/(\zeta - w)$ around the circle of radius $R$ centered at the origin is zero. Use this, together with the usual Cauchy integral formal, to deduce the desired identity.]

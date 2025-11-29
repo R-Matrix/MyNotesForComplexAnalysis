@@ -124,11 +124,24 @@ extra_css:
   - stylesheets/math_env.css
   - stylesheets/note_block.css
 
+extra:
+  generator: true
+  social:
+  - icon: octicons/mail-16
+    link: mailto:dsq1961248553@outlook.com
+
+copyright: |
+  &copy; 2025 R-Matrix - 
+  <a href="/license/">CC BY 4.0</a>
+
+repo_url: https://github.com/R-Matrix/MyNotesForComplexAnalysis
 
 nav:
   - 首页: 
     - Home: index.md
+    - 许可证: license.md
   - 第一章: 
     - Preliminaries to Complex Analysis: Ch1/Ch1.md
   - 第二章: 
     - Cauchy's Theorem and Its Applications: Ch2/Ch2.md
+  

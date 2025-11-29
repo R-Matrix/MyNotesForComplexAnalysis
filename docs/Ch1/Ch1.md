@@ -30,6 +30,8 @@ The sweeping  development of mathematics during the last two centuries is due in
 **解答** :
 不妨设 $0 \prec i$ , 那么 $0 \cdot i \prec i \cdot i$, 即 $0 \prec -i$, 两边加 $i$, 有 $i \prec 0$, 矛盾! <span style="float:right">$\square$</span>
 
+---
+
 > **练习2** `(From Stein Ch1 ET8)` Suppose $U$ and $V$ are open set in complex plane. Prove that if $f : U \to V$ and $g : V \to \mathbb{C}$ are two functions that are difficrentable (in the real sense, that is, as functions of the two real variables $x$ and $y$), and $h = g \circ f$, then
 > 
 $$ \frac{\partial h}{\partial z} = \frac {\partial g}{\partial z} \frac{\partial f}{\partial z} + \frac{\partial g}{\partial \bar z} \frac{\partial \bar f}{\partial z}$$
@@ -52,6 +54,8 @@ $$\frac{\partial h}{\partial z} = g_ww_z + g_{\bar w}\bar w_z = g_zf_z + g_{\bar
 $$\frac{\partial h}{\partial \bar z} = g_ww_{\bar z} + g_{\bar w}\bar w_{\bar z} = g_zf_{\bar z} + g_{\bar z}\bar f_\bar z $$ 
 
 <span style="float:right">$\square$</span>
+
+---
 
 > **练习3** `(From Stein Ch1 ET9)` Show that in polar coordonates, the Cauchy-Riemann equations take the form
 >
@@ -146,6 +150,8 @@ $$\frac{\partial v}{\partial x} = \frac{\partial v}{y} = 0$$
 **证明** :
 假设不为常数, 利用开映射定理导出矛盾.<span style="float:right">$\square$</span>
 
+---
+
 > **练习6** `(From Stein Ch1 ET14)` Suppose $\{a_n\}_{n = 1}^N$ and $\{b_n\}_{n = 1}^N$ are two finite sequences of complex numbers. Let $B_k = \sum_{n=1}^k b_n$ denote the partial sums of the series $\sum b_n$  with the convention $B_0 = 0$. Prove **the summation by parts** formula
 > 
 > $$\sum_{n =M}^N a_nb_n = a_NB_N - a_MB_{M-1} - \sum_{n=M}^{N-1}(a_{n+1}-a_n)B_n. $$
@@ -163,7 +169,7 @@ $$
 
 <span style="float:right">$\square$</span>
 
-
+---
 
 > **练习7** `(From Stein Ch1 ET15)`**Abel's theorem.** Suppose $\sum_{n=1}^\infty a_n$ converges. Prove that
 > 
@@ -301,6 +307,8 @@ $$\text{LHS} = \sum_{k=0}^\infty \frac{2^{k+1}z^{2^{k+1}}}{z^{2^{k+1}}-1}-\frac{
 
 <span style="float:right">$\square$</span>
 
+---
+
 > **练习9** `(From Stein Ch1 ET23)` Consider the function $f$ defined on $\mathbb{R}$ by
 > 
 > \[f(x) = \begin{cases}0&, \text{if } x \le 0, \\e^{-1 / x^2}&, \text{if } x > 0.\end{cases}\]
@@ -338,14 +346,16 @@ $$f^{(k+1)}(0) = \lim_{t \to 0} \frac{f^{(k)}(t) - f^{(k)}(0)}{t} = \lim_{t \to 
 
 ---
 
-**Remark** : <font color = "red"> 这是一个重要的反例!!! 从而我们知道无穷可微函数不一定是实解析函数 </font>
-上面这个函数在原点附近的任何开邻域都不收敛, 原因是 $f(z) = e^z$ 在无穷远点有奇点.
+**Remark** : **<font color = "red"> 这是一个重要的反例!!! 从而我们知道无穷可微函数不一定是实解析函数 </font>**
+即 $C^w \subsetneq C^\infty$
+
+上面这个函数在原点附近的任何开邻域都不收敛, 原因是 $f(z) = e^z$ 在无穷远点有**本质奇点(Essential singualrity)**.
 
 ---
 
 ## 作业题节选
 
-> **习题1** : `(From Ch1 17)` 设 $U, V$ 是 $\mathbb{C}$ 中的区域, 映射 $f : U \to V$ 称为**开映射**, 如果 $f$ 将$U$ 中的开集映成 $V$ 中的开集; $f$ 称为**逆紧**的, 如果对 $V$ 中的任意紧集 $K \subset V$, $f^{-1}(K)$ 是 $U$ 中的紧集. 证明 : 如果 $f$ 是开且逆紧的映射, 则 $f(U) = V$.
+> **习题1** : `(From Ch1 HWXT17)` 设 $U, V$ 是 $\mathbb{C}$ 中的区域, 映射 $f : U \to V$ 称为**开映射**, 如果 $f$ 将$U$ 中的开集映成 $V$ 中的开集; $f$ 称为**逆紧**的, 如果对 $V$ 中的任意紧集 $K \subset V$, $f^{-1}(K)$ 是 $U$ 中的紧集. 证明 : 如果 $f$ 是开且逆紧的映射, 则 $f(U) = V$.
 
 **证明** :
 假设 $f$ 非满, 则存在点 $v \in V$ 使得 $v \notin f(U)$. 由于 $f$ 是开映射, $f(U)$ 是 $V$ 中的开集.
