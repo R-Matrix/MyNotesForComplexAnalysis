@@ -24,7 +24,10 @@ time : "2025-12-06"
 /// question
 设曲线 $\gamma(t) = te^{it}$, 方向为从 $t = 0$ 到 $t = \pi$. 分别计算以下曲线积分
 
-(1) $\int_\gamma \bar z dz;\quad$ (2) $\int_\gamma |z| dz;\quad$ (3) $\int_\gamma |z||dz|; \quad$ (4) $\int_\gamma z(1+|z|^2)^{-1/2}|dz|.$
+(1) $\int_\gamma \bar z dz;\quad$  
+(2) $\int_\gamma |z| dz;\quad$  
+(3) $\int_\gamma |z||dz|; \quad$  
+(4) $\int_\gamma z(1+|z|^2)^{-1/2}|dz|.$
 ///
 
 /// details | 解答
@@ -88,7 +91,40 @@ $|z| = |te^{it}| = t$, $\quad |dz| = |\gamma'(t)|dt = \sqrt {1 + t^2} dt$
 ///
 
 /// remark
-关于教材的[12](../RefSource/Complex_Analysis_zh_cn.pdf/#page=100)
+关于教材的Schwarz引理在[第109页](../RefSource/Complex_Analysis_zh_cn.pdf/#page=109 "这里不知道为什么无法跳转指定页码, 这里的功能有待查询")
+///
 
+---
 
+### 第三题(12分)
+
+///question
+求将 $1, 0, -1$ 分别映射至 $i, 1 + i, 1$ 的分式线性映射 $L(z)$, 并求
+
+(1) 单位圆周 $\{|z| = 1\}$;  
+(2) 单位开圆盘 $\{|z| <> 1\}$;  
+(3) 虚轴 $\mathfrak{R}z = 0$
+
+在 $L$ 映射下的像.
+///
+
+/// details | 解答
+    type : proof
+我们这里当然可以设四个系数进行方程组求解, 这里使用分式线性变换保持交比进行计算.
+
+$$(z, 1, 0, -1) = (L(z), i, 1 + i, 1)$$
+
+即
+
+\[\frac{(z - 0)(1 - (-1))}{(z - (-1))(1 - 0)} = \frac {(L(z) - (1 + i))(i - 1)}{(L(z) - 1)(i - (1 + i))}\]
+
+化简得
+
+\[L(z) = -\frac{1 + i}{iz - 1}.\]
+
+由于分式线性变换把圆和直线映为圆或直线, 从而再考虑点 $z = i$, $L(i) = \frac{1 + i}{2} := w_4$, 发现 $w_1 = i, w_3 = 1$ 与 $w_4$ 三点共线($w_4$ 恰为 $w_1$ 与 $w_3$ 中点), 因此 $L$ 把单位圆周映为直线 $l_1 : x + y - 1 = 0$.
+
+由于分式线性变换在 $\overline {\mathbb C}$ 是解析的, 具有保向性, 从而只需要判断把单位圆盘内部映为直线上方或下方. 考虑 $L(0) = 1 + i$, 因此把单位圆盘映为 $x + y - 1 > 0$ 的区域.
+
+不妨设 $z = it, t \in \mathbb R$, 那么 $L(z) = \frac {1 + i}{1 + t} = \frac {1}{1 + t} + i \frac {1}{1 + t}$, 其满足 $\text{Im}(L(z)) = \text{Re}(L(z))$ , 从而 $L$ 把虚轴映为直线 $x - y = 0$.
 ///

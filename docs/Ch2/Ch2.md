@@ -391,8 +391,10 @@ then, $\varphi$ is linear.
 如果不存在 $w \in f(\mathbb{D})$ 使得 $|w| = \frac 14$, 则 $f(z) = k_\theta(z).$
 
 后面两个定理可以参考 
-[知乎链接1](https://zhuanlan.zhihu.com/p/25379347 "单叶函数猜想(1): Loewner的贡献 From 单叶函数猜想(1): Loewner的贡献"), 
-[知乎链接2](https://zhuanlan.zhihu.com/p/67912434 "复变函数学习笔记(14)——Koebe-Bieberbach定理、deBranges定理 From Fiddie")
+
+[DTSIo Shao. 单叶函数猜想(1): Loewner的贡献. 知乎](https://zhuanlan.zhihu.com/p/25379347 "单叶函数猜想(1): Loewner的贡献 From DTSIo Shao​"), 
+
+[Fiddie. 复变函数学习笔记(14)——Koebe-Bieberbach定理、deBranges定理. 知乎](https://zhuanlan.zhihu.com/p/67912434 "复变函数学习笔记(14)——Koebe-Bieberbach定理、deBranges定理 From Fiddie")
 ///
 ///
 
